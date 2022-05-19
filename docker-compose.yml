@@ -3,7 +3,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./go-clean-architecture/Dockerfile
+      dockerfile: ./go-clean-architecture/Dockerfile.dev
     volumes:
       - ./go-clean-architecture:/app
     environment:
@@ -36,7 +36,7 @@ services:
       - tcp://mysql:3306
       - -wait-retry-interval
       - 3s
-    command: ["/app/build"]
+    command: ["sh", "./entrypoint.sh"]
     depends_on:
       - mysql
       - redis
