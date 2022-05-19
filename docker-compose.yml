@@ -36,7 +36,7 @@ services:
       - tcp://mysql:3306
       - -wait-retry-interval
       - 3s
-    command: ["sh", "./entrypoint.sh"]
+    command: ["sh", "./scripts/entrypoint.sh"]
     depends_on:
       - mysql
       - redis
