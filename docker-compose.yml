@@ -23,7 +23,6 @@ services:
       - REDIS_POOLSIZEPERCPU=10
       - REDIS_MINIDLECONNECTION=0
       - REDIS_POOLTIMEOUTSECONDS=4
-      - ENGINE_URL=http://dialogue-processing-server:8080
       - AWS_S3BUCKETNAME=${AWS_S3BUCKETNAME}
     ports:
       - "3333:3333"
